@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--实现接口的全限定的方法名-->
+<mapper namespace="cn.itcase.Dao.BookDao">
+    <!--id就是要实现的接口的方法名-->
+
+ <!--查询数据-->
+    <!--resultType主要看返回值,void默认不写  int类型就写int, String类型就写String-->
+<select id="findAll" resultType="Book">
+    select * from book
+</select>
+
+<!--添加数据    -->
+    <!--parameterTyoe主要看参数-->
+    <insert id="sava" parameterType="Book">
+        INSERT INTO book VALUES (NULL,#{bookname},#{author},#{company},#{price},#{kind_id})
+    </insert>
+
+<!--修改数据-->
+   <update id="userupdate" parameterType="Book">
+       UPDATE book SET bookname=#{bookname},author=#{author},company=#{company},price=#{price},kind_id=#{kind_id} WHERE id=#{id}
+   </update>
+
+<!--删除数据-->
+    <delete id="userdelete" parameterType="java.lang.Integer">
+        DELETE FROM book WHERE id=#{id}
+    </delete>
+
+<!--查询一条语句    -->
+    <select id="find" parameterType="java.lang.Integer" resultType="Book">
+        SELECT * FROM book WHERE id=#{id}
+    </select>
+
+ <!--模糊查询   -->
+<select id="finddim" resultType="cn.itcase.domain.Book" parameterType="java.lang.String">
+    SELECT * FROM book WHERE bookname LIKE #{bookname}
+</select>
+
+<!--获取插入的id-->
+    <insert id="getid" parameterType="cn.itcase.domain.Book">
+  <selectKey keyProperty="id" resultType="int" order="AFTER">
+      SELECT last_insert_id()
+  </selectKey>
+        INSERT INTO book VALUES(NULL,#{bookname},#{author},#{company},#{price},#{kind_id})
+    </insert>
+
+
+ <!--查询总记录数   -->
+    <select id="sumrecord" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM book
+    </select>
+
+    <!--查询总页数总条数Book方法-->
+    <select id="bookvo" resultType="Book">
+        SELECT count(*) as total,ceil(count(*)/3) as pages from book
+    </select>
+
+    <!--查询总页数总条数Map方法-->
+<select id="bookMap" resultType="Map">
+    SELECT count(*) as total,ceil(count(*)/3) as pages from book
+</select>
+
+
+    <!--list查询多条语句的-->
+<select id="findcase2" parameterType="list" resultType="book">
+    select * from book where bookname=#{list[0]} or bookname=#{list[1]}
+</select>
+
+    <!--Map查询多条语句-->
+    <select id="findcase3" parameterType="map" resultType="book">
+        select * from book where company=#{name} and kind_id=#{id}
+    </select>
+
+    <!--通过数组方式查询多条语句-->
+   <select id="findcase4" resultType="book" parameterType="String">
+       select * from book where company=#{array[0]} or company=#{array[1]}
+   </select>
+
+</mapper>

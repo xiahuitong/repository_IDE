@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Mybatis/Day01_Mybastis/Day01_Mybastis.iml" filepath="$PROJECT_DIR$/../Mybatis/Day01_Mybastis/Day01_Mybastis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Mybatis/Day02_Mybaatis/Day02_Mybaatis.iml" filepath="$PROJECT_DIR$/../Mybatis/Day02_Mybaatis/Day02_Mybaatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Day02_SpringMVC/Day02_SpringMVC.iml" filepath="$PROJECT_DIR$/../Day02_SpringMVC/Day02_SpringMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Mybatis/Day03_Mybatis/Day03_Mybatis.iml" filepath="$PROJECT_DIR$/../Mybatis/Day03_Mybatis/Day03_Mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Day04_Spring/Day04_Spring.iml" filepath="$PROJECT_DIR$/../Day04_Spring/Day04_Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Day2_Spring/Day2_Spring.iml" filepath="$PROJECT_DIR$/../Day2_Spring/Day2_Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Day2_Spring_Work/Day2_Spring_Work.iml" filepath="$PROJECT_DIR$/../Day2_Spring_Work/Day2_Spring_Work.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../maven_day02/maven_day02.iml" filepath="$PROJECT_DIR$/../maven_day02/maven_day02.iml" />
+      <module fileurl="file://E:/ssm综合练习/maven/day02/代码/maven_day02_1/maven_day02_1.iml" filepath="E:/ssm综合练习/maven/day02/代码/maven_day02_1/maven_day02_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../maven_day02_parent/maven_day02_Dao.iml" filepath="$PROJECT_DIR$/../maven_day02_parent/maven_day02_Dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../maven_day02_parent/maven_day02_dao/maven_day02_dao.iml" filepath="$PROJECT_DIR$/../maven_day02_parent/maven_day02_dao/maven_day02_dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../maven_day02_parent/maven_day02_parent.iml" filepath="$PROJECT_DIR$/../maven_day02_parent/maven_day02_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../maven_day02_parent/maven_day02_service/maven_day02_service.iml" filepath="$PROJECT_DIR$/../maven_day02_parent/maven_day02_service/maven_day02_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../maven_day02_parent/maven_day02_web/maven_day02_web.iml" filepath="$PROJECT_DIR$/../maven_day02_parent/maven_day02_web/maven_day02_web.iml" />
+    </modules>
+  </component>
+</project>

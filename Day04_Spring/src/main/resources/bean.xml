@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+<!--扫描注解-->
+    <context:component-scan base-package="cn.itcase"></context:component-scan>
+
+    <bean id="ds" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql:///class1"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="root"></property>
+    </bean>
+    <bean id="runner" class="org.apache.commons.dbutils.QueryRunner">
+        <constructor-arg name="ds" ref="ds"></constructor-arg>
+    </bean>
+
+    <!--jdbc连接对象-->
+    <bean id="jdbc" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg name="dataSource" ref="ds"></constructor-arg>
+    </bean>
+<!--事务管理器-->
+    <bean id="tm" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+     <property name="dataSource" ref="ds"></property>
+    </bean>
+    <!--开启事务管理器-->
+    <tx:annotation-driven transaction-manager="tm"></tx:annotation-driven>
+
+    <!--定义事务执行规则-->
+<tx:advice id="interceptor" transaction-manager="tm">
+    <tx:attributes>
+        <!--指定trans方法需要事务支持  propagation="REQUIRED"指必须提供事务,用于增删改-->
+        <tx:method name="trans" propagation="REQUIRED"/>
+        <!--propagation="SUPPORTS" 指有事务无事务都要执行(适用于查询)-->
+        <tx:method name="*" propagation="SUPPORTS" read-only="true"></tx:method>
+    </tx:attributes>
+</tx:advice>
+    <aop:config>
+        <!--advice-ref="interceptor" 将定义的规则引用到指定的界面-->
+        <aop:advisor advice-ref="interceptor" pointcut="execution(* cn.itcase.Service.impl.*.*(..))"></aop:advisor>
+    </aop:config>
+
+
+
+    <bean id="conn" factory-bean="ds" factory-method="getConnection">
+        <!--手动提交-->
+        <property name="autoCommit" value="false">
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../Day01_SpringMVC" />
+    <file type="web" url="file://$PROJECT_DIR$/../Day02_SpringMVC" />
+    <file type="web" url="file://$PROJECT_DIR$/../Day03_SpringMVC" />
+    <file type="web" url="file://$PROJECT_DIR$/../Day04_Spring" />
+    <file type="web" url="file://$PROJECT_DIR$/../Day2_Spring" />
+    <file type="web" url="file://$PROJECT_DIR$/../Day2_Spring_Work" />
+    <file type="web" url="file://$PROJECT_DIR$/../maven_day02" />
+    <file type="web" url="file://E:/ssm综合练习/maven/day02/代码/maven_day02_1" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../Mybatis/Day01_Mybastis/pom.xml" />
+        <option value="$PROJECT_DIR$/../Day02_SpringMVC/pom.xml" />
+        <option value="E:/ssm综合练习/maven/day02/代码/maven_day02_1/pom.xml" />
+        <option value="$PROJECT_DIR$/../maven_day02_parent/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../Day04_Spring/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../Day2_Spring/pom.xml" />
+        <option value="$PROJECT_DIR$/../Day2_Spring_Work/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" project-jdk-name="9.0" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

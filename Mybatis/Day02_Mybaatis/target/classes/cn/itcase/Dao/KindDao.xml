@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcase.Dao.KindDao">
+
+    <resultMap id="map1" type="kind">
+    <!--property集合名称 oftype集合类型-->
+        <result property="kname" column="kname"></result>
+    <collection property="books" ofType="Book">
+    <!--property 封装到javaBean属性中-->
+    <!--column 将数据哪个字段进行封装-->
+        <result property="bookname" column="bookname"></result>
+    </collection>
+    </resultMap>
+    <select id="findcase2" resultMap="map1">
+    select a.bookname,k.kname from book a,kind k where a.kind_id=k.kid
+    </select>
+
+</mapper>
+
+

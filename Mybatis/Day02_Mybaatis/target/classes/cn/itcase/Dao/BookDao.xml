@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcase.Dao.BookDao">
+
+<!--<select id="findbycase" resultType="book" parameterType="book">-->
+<!--SELECT * from book WHERE 1=1-->
+<!--<if test="bookname!=null">-->
+<!--AND bookname=#{bookname}-->
+<!--</if>-->
+
+<!--<if test="company!=null">-->
+<!--AND company=#{company}-->
+<!--</if>-->
+<!--</select>-->
+
+
+    <!--<select id="findbycase1" resultType="book" parameterType="String">-->
+        <!--SELECT * from book-->
+        <!--<where>-->
+        <!--<if test="_parameter!=null and _parameter!=''">-->
+            <!--AND bookname=#{bookname}-->
+        <!--</if>-->
+        <!--</where>-->
+    <!--</select>-->
+
+    <!--<select id="findbycase2" resultType="book" parameterType="list">-->
+        <!--select * from book-->
+        <!--<where>-->
+        <!--<foreach collection="list" open="id in(" item="id" separator="," close=")">-->
+            <!--#{id}-->
+        <!--</foreach>-->
+        <!--</where>-->
+    <!--</select>-->
+
+    <!--id 自定义唯一标识-->
+    <!--type 将数据手动封装指定类型-->
+    <resultMap id="map1" type="book">
+        <result property="kind.kname" column="kname"></result>
+        <result property="bookname" column="bookname"></result>
+        <!--property 封装到javaBean属性中-->
+        <!--column 将数据哪个字段进行封装-->
+    </resultMap>
+
+   <select id="findcase1" resultMap="map1">
+       select a.bookname,k.kname from book a,kind k where a.kind_id=k.kid
+   </select>
+</mapper>

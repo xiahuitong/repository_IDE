@@ -1,0 +1,14 @@
+
+
+
+
+
+<mapper namespace="cn.itcase.Dao.BookDao">
+<select id="findbyid" parameterType="int" resulttype="book">
+select * from book where id=#{id]
+</select>
+
+    <update id="update" paranmetertype="book">
+update book set price=#{price} where id=#{id}
+    </update>
+</mapper>
