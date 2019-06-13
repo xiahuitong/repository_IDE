@@ -15,6 +15,10 @@
 			    http://www.springframework.org/schema/tx/spring-tx.xsd
 			    http://www.springframework.org/schema/mvc
 			    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+
+    <context:component-scan base-package="cn.itcase"></context:component-scan>
     <!--配置Dao层的配置文件-->
     <!--配置连接池-->
     <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
@@ -24,10 +28,10 @@
         <property name="password" value="root"></property>
     </bean>
     <!--配置生成Sqlsession对象工厂-->
-    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="factory">
+    <bean  id="factory" class="org.mybatis.spring.SqlSessionFactoryBean" >
 <property name="dataSource" ref="dataSource"></property>
         <!--扫描pom包,给包起别名-->
-<property name="typeAliasesPackage" value="cn.itcase.domain"></property>
+<property name="typeAliasesPackage" value="cn.itcase.domin"></property>
     </bean>
 
     <!--扫描接口包路径,生成包下所有接口代理对象-->

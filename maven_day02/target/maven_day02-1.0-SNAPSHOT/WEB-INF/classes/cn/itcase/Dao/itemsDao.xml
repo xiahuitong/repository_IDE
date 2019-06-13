@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.itcase.Dao.itemsDao">
     <!--resultMap 返回值  parameterType 参数类型-->
-    <select id="sava" resultMap="Items" parameterType="int">
-        select * FROM  Items WHERE id=#{id}
+    <select id="findByid" resultType="items" parameterType="java.lang.Integer">
+        select * FROM  items WHERE id=#{id}
     </select>
 </mapper>
